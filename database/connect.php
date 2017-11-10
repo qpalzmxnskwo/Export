@@ -1,10 +1,10 @@
 <?php
 //funkcja służąca do połączenia z bazą danych
-function db_connection($db){
+function db_connection(){
     $host = "localhost";
 	$db_user = "root";
 	$db_pass = "";
-	$db_name = $db;
+	$db_name = "ods_db";
 
     $conn = new mysqli($host, $db_user, $db_pass, $db_name);
     if ($conn->connect_errno!=0){

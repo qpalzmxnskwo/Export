@@ -10,7 +10,7 @@ $array = array(
 );
 
 
-$connection = db_connection($db_ods);
+$connection = db_connection();
 $sql="SELECT * FROM $db_sheet1_tab WHERE ";
 
 foreach ($array as $key => $value) {

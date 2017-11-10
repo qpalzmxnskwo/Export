@@ -146,11 +146,11 @@
 
 
 <input type="checkbox" name="">
-<button>Wyślij</button>
+<button onclick="send()">Wyślij</button>
 
 </div>
 
-  <table id='table'>
+  <table class="table" id='table'>
         <thead>                          
             <tr>
                 <th>Województwo</th>
@@ -175,17 +175,49 @@
                 <th>Stanowisko osoby zarządzającej</th>
             </tr>
         </thead>
-        <tr>
-        	<th>test</th>
-        	<th>test</th>
-        	<th>test</th>
-        	<th>test</th>
-        </tr>  <tr>
-        	<th>test</th>
-        	<th>test</th>
-        	<th>test</th>
-        	<th>test</th>
-        </tr>
-  </table>
+
+          <?php
+  
+   require_once "database/dbinfo.php";
+   require_once "database/connect.php";
+  
+    
+    $connection = db_connection();
+           $sql = "SELECT * FROM $db_sheet1_tab";
+           
+           $result = $connection->query($sql);
+            while ($row=$result->fetch_assoc()){  
+
+                $sql_user = "SELECT $db_sheet1_province FROM $db_sheet1_tab";
+                $result_user = $connection->query($sql_user);
+                $row_user = $result_user->fetch_assoc();
+                echo "<tr  onMouseover=this.bgColor='#D9E4E6' onMouseout=this.bgColor='white'>";
+                    echo "<td> $row[$db_sheet1_province]</td>"; 
+                    echo "<td> $row[$db_sheet1_city]</td>";
+                    echo "<td> $row[$db_sheet1_district]</td>";
+                    echo "<td> $row[$db_sheet1_trade]</td>";
+                    echo "<td> $row[$db_sheet1_comname]</td>";
+                    echo "<td> $row[$db_sheet1_form]</td>";
+                    echo "<td> $row[$db_sheet1_street]</td>";
+                    echo "<td> $row[$db_sheet1_code]</td>";
+                    echo "<td> $row[$db_sheet1_tel]</td>";
+                    echo "<td> $row[$db_sheet1_tel2]</td>";
+                    echo "<td> $row[$db_sheet1_fax]</td>";
+                    echo "<td> $row[$db_sheet1_email]</td>";
+                    echo "<td> $row[$db_users_lname]</td>";
+                    echo "<td> $row[$db_sheet1_nip]</td>";
+                    echo "<td> $row[$db_sheet1_regon]</td>";
+                    echo "<td> $row[$db_sheet1_pkd]</td>";
+                    echo "<td> $row[$db_sheet1_start]</td>";
+                    echo "<td> $row[$db_sheet1_fname]</td>";
+                    echo "<td> $row[$db_sheet1_lname]</td>";
+                    echo "<td> $row[$db_sheet1_position]</td>";
+            }
+
+   
+   ?>  
+       </tr> 
+    </tbody> 
+  </table>        
 </body>
 </html>
