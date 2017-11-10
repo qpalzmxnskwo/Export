@@ -31,6 +31,7 @@ $mail = new PHPMailer(true);
 	$mail->SetFrom('', '');
 	$mail->Subject = '';
 	$mail->Body = $text;
+	//$mail->AddAttachment($_FILES['file']['tmp_name'], $_FILES['file']['name']); //attachments
 	
 	
 	for ($i=$start; $i<$i+11, $i++){

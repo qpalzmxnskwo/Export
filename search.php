@@ -4,10 +4,12 @@ require_once "database/dbinfo.php";
 require_once "database/connect.php";
 
 
-$array = array(
-   "$db_sheet1_city" => 'imie'
+// $array = array(
+   // "$db_sheet1_city" => 'imie'     ///////////template
 	
-);
+// );
+
+
 
 
 $connection = db_connection($db_ods);
