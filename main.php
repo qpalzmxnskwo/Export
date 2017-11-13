@@ -21,91 +21,93 @@
 
 <body>
 
+
 <div id="center">
+<form id='form'>
     <div class="input">
         <label for="wojewodztwo">Województwo</label>
-        <select>
+        <select name='Powiat'>
   <option value=""></option>
-  <option value="">Dolnośląskie</option>
-  <option value="">Kujawsko-pomorskie</option>
-  <option value="">Lubelskie</option>
-  <option value="">Lubuskie</option>
-  <option value="">Łódzkie</option>
-  <option value="">Małopolskie</option>
-  <option value="">Mazowieckie</option>
-  <option value="">Opolskie</option>
-  <option value="">Podkarpackie</option>
-  <option value="">Podlaskie</option>
-  <option value="">Pomorskie</option>
-  <option value="">Śląskie</option>
-  <option value="">Świętokrzyskie</option>
-  <option value="">Warmińsko-mazurskie</option>
-  <option value="">Wielkopolskie</option> 
-  <option value="">Zachodniopomorskie</option> 
+  <option value="Dolnośląskie">Dolnośląskie</option>
+  <option value="Kujawsko-pomorskie">Kujawsko-pomorskie</option>
+  <option value="Lubelskie">Lubelskie</option>
+  <option value="Lubuskie">Lubuskie</option>
+  <option value="Łódzkie">Łódzkie</option>
+  <option value="Małopolskie">Małopolskie</option>
+  <option value="Mazowieckie">Mazowieckie</option>
+  <option value="Opolskie">Opolskie</option>
+  <option value="Podkarpackie">Podkarpackie</option>
+  <option value="Podlaskie">Podlaskie</option>
+  <option value="Pomorskie">Pomorskie</option>
+  <option value="Śląskie">Śląskie</option>
+  <option value="Świętokrzyskie">Świętokrzyskie</option>
+  <option value="Warmińsko-mazurskie">Warmińsko-mazurskie</option>
+  <option value="Wielkopolskie">Wielkopolskie</option> 
+  <option value="Zachodniopomorskie">Zachodniopomorskie</option> 
 </select>
     </div>
 
     <div class="input">
         <label for="miasto">Miasto</label>
-        <input type="text" value="" name="miasto">
+        <input type="text" value="" name="Miasto">
     </div>
 
     <div class="input">
         <label for="powiat">Powiat</label>
-        <input type="text" value="" name="powiat">
+        <input type="text" value="" name="Powiat">
     </div>
 
     <div class="input">
         <label for="branza">Branża</label>
-        <input type="text" value="" name="branza">
+        <input type="text" value="" name="Branża">
     </div>
 <br style="clear:both;">
 
 <div class="input">
         <label for="nazwafirmy">Nazwa firmy</label>
-        <input type="text" value="" name="nazwafirmy">
+        <input type="text" value="" name="Nazwa firmy">
     </div>
 
     <div class="input">
         <label for="formaprawna">Forma prawna</label>
-        <input type="text" value="" name="formaprawna">
+        <input type="text" value="" name="Forma prawna">
     </div>
 
     <div class="input">
         <label for="ulica">Ulica</label>
-        <input type="text" value="" name="ulica">
+        <input type="text" value="" name="Ulica">
     </div>
 
     <div class="input">
         <label for="kodpocztowy">Kod pocztowy</label>
-        <input type="text" value="" name="kodpocztowy">
+        <input type="text" value="" name="Kod pocztowy">
     </div>
 <br style="clear:both;">
 
     <div class="input">
         <label for="telstac">Telefon stacjonarny</label>
-        <input type="text" value="" name="telstac">
+        <input type="text" value="" name="Telefon stacjonarny">
     </div>
 
     <div class="input">
         <label for="telkom">Telefon komórkowy</label>
-        <input type="text" value="" name="telkom">
+        <input type="text" value="" name="Telefon kom">
     </div>
 
     <div class="input">
         <label for="fax">Fax</label>
-        <input type="text" value="" name="fax">
+        <input type="text" value="" name="Fax">
     </div>
 
     <div class="input">
         <label for="email">Email</label>
-        <input type="text" value="" name="email">
+        <input type="text" value="" name="Email">
     </div>
 <br style="clear:both;">
 
     <div class="input">
         <label for="zatrudnienie">Zatrudnienie</label>
-        <input type="text" value="" name="zatrudnienie">
+        <input type="text" value="" name="Zatrudnienie">
     </div>
 
     <div class="input">
@@ -126,29 +128,30 @@
 
     <div class="input">
         <label for="rozp">Rozpoczęcie działalności</label>
-        <input type="text" value="" name="rozp">
+        <input type="text" value="" name="Rozpoczęcie_działalności">
     </div>
 
     <div class="input">
         <label for="imie">Imię osoby zarządzanącej</label>
-        <input type="text" value="" name="imie">
+        <input type="text" value="" name="Imię Osoby zarządzającej">
     </div>
 
     <div class="input">
         <label for="nazwisko">Nazwisko osoby zarządzającej</label>
-        <input type="text" value="" name="nazwisko">
+        <input type="text" value="" name="Nazwisko Osoby zarządzającej">
     </div>
 
     <div class="input">
         <label for="stanowisko">Stanowisko osoby zarządzającej</label>
-        <input type="text" value="" name="stanowisko">
+        <input type="text" value="" name="Stanowisko Osoby zarządzającej">
     </div>
 
 
-<input type="checkbox" name="">
-<button onclick="send()">Wyślij</button>
-
+<input type="checkbox" name="not_repeat_mail">
+<button type='submit' >Wyślij</button>
+</form>
 </div>
+
 
   <table class="table" id='table'>
         <thead>                          
@@ -176,48 +179,51 @@
             </tr>
         </thead>
 
-          <?php
+   <?php
   
-   require_once "database/dbinfo.php";
-   require_once "database/connect.php";
+   // require_once "database/dbinfo.php";
+   // require_once "database/connect.php";
   
     
-    $connection = db_connection();
-           $sql = "SELECT * FROM $db_sheet1_tab";
+    // $connection = db_connection();
+           // $sql = "SELECT * FROM $db_sheet1_tab";
            
-           $result = $connection->query($sql);
-            while ($row=$result->fetch_assoc()){  
+           // $result = $connection->query($sql);
+            // while ($row=$result->fetch_assoc()){  
 
-                $sql_user = "SELECT $db_sheet1_province FROM $db_sheet1_tab";
-                $result_user = $connection->query($sql_user);
-                $row_user = $result_user->fetch_assoc();
-                echo "<tr  onMouseover=this.bgColor='#D9E4E6' onMouseout=this.bgColor='white'>";
-                    echo "<td> $row[$db_sheet1_province]</td>"; 
-                    echo "<td> $row[$db_sheet1_city]</td>";
-                    echo "<td> $row[$db_sheet1_district]</td>";
-                    echo "<td> $row[$db_sheet1_trade]</td>";
-                    echo "<td> $row[$db_sheet1_comname]</td>";
-                    echo "<td> $row[$db_sheet1_form]</td>";
-                    echo "<td> $row[$db_sheet1_street]</td>";
-                    echo "<td> $row[$db_sheet1_code]</td>";
-                    echo "<td> $row[$db_sheet1_tel]</td>";
-                    echo "<td> $row[$db_sheet1_tel2]</td>";
-                    echo "<td> $row[$db_sheet1_fax]</td>";
-                    echo "<td> $row[$db_sheet1_email]</td>";
-                    echo "<td> $row[$db_users_lname]</td>";
-                    echo "<td> $row[$db_sheet1_nip]</td>";
-                    echo "<td> $row[$db_sheet1_regon]</td>";
-                    echo "<td> $row[$db_sheet1_pkd]</td>";
-                    echo "<td> $row[$db_sheet1_start]</td>";
-                    echo "<td> $row[$db_sheet1_fname]</td>";
-                    echo "<td> $row[$db_sheet1_lname]</td>";
-                    echo "<td> $row[$db_sheet1_position]</td>";
-            }
+                // $sql_user = "SELECT $db_sheet1_province FROM $db_sheet1_tab";
+                // $result_user = $connection->query($sql_user);
+                // $row_user = $result_user->fetch_assoc();
+                // echo "<tr  onMouseover=this.bgColor='#D9E4E6' onMouseout=this.bgColor='white'>";
+                    // echo "<td> $row[$db_sheet1_province]</td>"; 
+                    // echo "<td> $row[$db_sheet1_city]</td>";
+                    // echo "<td> $row[$db_sheet1_district]</td>";
+                    // echo "<td> $row[$db_sheet1_trade]</td>";
+                    // echo "<td> $row[$db_sheet1_comname]</td>";
+                    // echo "<td> $row[$db_sheet1_form]</td>";
+                    // echo "<td> $row[$db_sheet1_street]</td>";
+                    // echo "<td> $row[$db_sheet1_code]</td>";
+                    // echo "<td> $row[$db_sheet1_tel]</td>";
+                    // echo "<td> $row[$db_sheet1_tel2]</td>";
+                    // echo "<td> $row[$db_sheet1_fax]</td>";
+                    // echo "<td> $row[$db_sheet1_email]</td>";
+                    // echo "<td> $row[$db_users_lname]</td>";
+                    // echo "<td> $row[$db_sheet1_nip]</td>";
+                    // echo "<td> $row[$db_sheet1_regon]</td>";
+                    // echo "<td> $row[$db_sheet1_pkd]</td>";
+                    // echo "<td> $row[$db_sheet1_start]</td>";
+                    // echo "<td> $row[$db_sheet1_fname]</td>";
+                    // echo "<td> $row[$db_sheet1_lname]</td>";
+                    // echo "<td> $row[$db_sheet1_position]</td>";
+            // }
 
    
-   ?>  
+    ?>  
        </tr> 
     </tbody> 
   </table>        
 </body>
 </html>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/get_data.js"></script>
