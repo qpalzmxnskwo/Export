@@ -181,7 +181,9 @@
 		<tbody>
 
     </tbody> 
-  </table>        
+  </table>    
+
+<input type="button" style="float: right; margin-right: 235px; margin-top: 50px;" value="Następne" onclick="next()"/>  
 </body>
 </html>
 

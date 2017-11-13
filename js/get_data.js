@@ -44,3 +44,11 @@ $( "form" ).on( "submit", function( event ) {
 
 
 }
+
+function next(){
+document.location.href = 'main2.php';
+$_POST["names"];
+
+
+
+}
