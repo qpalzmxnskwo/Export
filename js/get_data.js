@@ -15,6 +15,7 @@ $( "form" ).on( "submit", function( event ) {
 	
 	$.post( "search.php", {data: data} )
 	.done(function(jsonArray ) { 
+	$("tbody tr, td").remove();
 	
 	 var names = JSON.parse(jsonArray);
 	 var i=0;

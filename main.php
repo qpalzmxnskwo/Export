@@ -132,7 +132,7 @@
     </div>
 
     <div class="input">
-        <label for="imie">Imię osoby zarządzanącej</label>
+        <label for="imie">Imię osoby zarządzającej</label>
         <input type="text" value="" name="Imię Osoby zarządzającej">
     </div>
 
