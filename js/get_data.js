@@ -1,13 +1,8 @@
 
 
 window.onload = function() {
-
 submit_form();
-
-
-
 };
-
 
 
 function submit_form(){
@@ -21,14 +16,8 @@ $( "form" ).on( "submit", function( event ) {
 	$.post( "search.php", {data: data} )
 	.done(function(jsonArray ) { 
 	
-	// var names = JSON.parse(jsonArray);
-			 // var j=1;
-			 // while (names[j]) {
-				// $( "#subtasks_list").prepend("<option value='"+names[j]+"'>");
-			 // j++;
-			 // }
+	 var names = JSON.parse(jsonArray);
 	
-			
     }); 
 	
 	
