@@ -15,8 +15,6 @@
 	  <meta charset="UTF-8">
  
       <link rel="stylesheet" href="css/style.css">
-      <link href="template/assets/css/bootstrap.css" rel="stylesheet" />
-  
 </head>
 
 <body>
@@ -147,8 +145,8 @@
     </div>
 
 
-<input type="checkbox" name="not_repeat_mail">
-<button type='submit' >Wyślij</button>
+<label><input type="checkbox" name="not_repeat_mail"> bez zduplikowanych maili</label>
+<button type='submit' >Wyszukaj</button>
 </form>
 </div>
 
@@ -185,10 +183,7 @@
 
 
   </table> 
-<input type="button" style="float: right; margin-right: 235px; margin-top: 50px;" value="Następne" onclick="next()"/>  
-
-
-
+<input type="button" style="float: right; margin-right: 235px; margin-top: 50px;" id='next'/>  
 
 </body>
 </html>

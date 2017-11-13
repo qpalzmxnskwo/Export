@@ -1,6 +1,7 @@
 
 window.onload = function() {
 submit_form();
+next();
 var names;
 };
 
@@ -38,12 +39,12 @@ $( "form" ).on( "submit", function( event ) {
 }
 
 
-
-}
-
-function next(){
-$.post( "main2.php", {data: names} )
-.done(function() { 
-	document.location.href = 'main2.php';
-}
-}
+ function next(){
+	 $('#next').click(function(){
+ $.post( "main2.php", {data: names} )
+ .done(function() { 
+ alert(names);
+	 document.location.href = 'main2.php';
+ })
+	 })
+ }
