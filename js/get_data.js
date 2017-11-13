@@ -37,7 +37,7 @@ $( "form" ).on( "submit", function( event ) {
 
 }
 
-<<<<<<< HEAD
+
 
 }
 
@@ -47,7 +47,7 @@ $_POST["names"];
 
 
 
-=======
+
 function show(){
 alert('hehe');	
 alert(names);	
