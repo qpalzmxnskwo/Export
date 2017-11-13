@@ -1,50 +1,50 @@
 <?php
 
 
-require_once 'PHPMailer/PHPMailer.php';
-require_once 'PHPMailer/SMTP.php';
-require_once 'PHPMailer/Exception.php';
+require_once 'PHPMailer.php';
+require_once 'SMTP.php';
+require_once 'Exception.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\PHPMailer\Exception;
 
-//$text=$_POST['text'];
+$text=$_POST['text'];
 
-//$start=0;
+$start=0;
 
-//send_mail();
+send_mail();
 
 
-//function send_mail(){
+
+function send_mail(){
 
 $mail = new PHPMailer(true);
 	$mail->SMTPDebug = 2;
 	$mail->CharSet = 'UTF-8';                                
     $mail->isSMTP();
 	$mail->SMTPAutoTLS = false;	 
-    $mail->Host = 'smtp.poczta.onet.pl';  
+    $mail->Host = '';  
     $mail->SMTPAuth = true;                               
-    $mail->Username = 'ola.stolorz@vp.pl';                 
-    $mail->Password = 'Masakra28218';                                             
+    $mail->Username = '';                 
+    $mail->Password = '';                                             
     $mail->Port = 587;  
-	$mail->SetFrom('ola.stolorz@vp.pl', 'olka');
-	$mail->Subject = 'hehe';
+	$mail->SetFrom('', '');
+	$mail->Subject = '';
 	$mail->Body = $text;
 	//$mail->AddAttachment($_FILES['file']['tmp_name'], $_FILES['file']['name']); //attachments
 	
 	
-	//for ($i=$start; $i<$i+11, $i++){
-	$mail->AddAddress('ola.stolorz@vp.pl');
-//}
-
-
- if ($mail->Send()){
-	// ini_set('max_execution_time', 10); // delay 10s
-	 //$start+=10;
-	 //send_mail();
-	 echo 'ok';
-     
+	for ($i=$start; $i<$i+11, $i++){
+	$mail->AddAddress('');
 }
+
+
+ if ($mail->Send(){
+	 ini_set('max_execution_time', 10); // delay 10s
+	 $start+=10;
+	 send_mail();
+     
+}}
 
 
 
