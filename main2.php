@@ -17,8 +17,7 @@
 </head>
 
 <body>
-
-<?php var_dump($_POST['data']) ?>
+<?php var_dump($_POST['data']);?>
 <div id="main2">
 	<div class="box2">
 	<button id='csv' class="export-btn"> Wyekspotruj do csv </button><br>

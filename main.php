@@ -183,10 +183,11 @@
 
 
   </table> 
-<input type="button" style="float: right; margin-right: 235px; margin-top: 50px;" id='next'/>  
+<button style="float: right; margin-right: 235px; margin-top: 50px;" id='next'>Dalej</button>  
 
 </body>
 </html>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.redirect.js"></script>
 <script type="text/javascript" src="js/get_data.js"></script>
