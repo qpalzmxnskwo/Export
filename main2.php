@@ -24,6 +24,11 @@
 <button id='csv'> Wyekspotruj do csv </button>
 <button id='xls'> Wyekspotruj do xls </button>
 
+<textarea rows="4" cols="50" id='text'>
+
+
+</textarea>
+
 
 
 </body>
