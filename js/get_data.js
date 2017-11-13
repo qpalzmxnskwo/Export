@@ -42,15 +42,8 @@ $( "form" ).on( "submit", function( event ) {
 }
 
 function next(){
-document.location.href = 'main2.php';
-$_POST["names"];
-
-
-
-
-function show(){
-alert('hehe');	
-alert(names);	
-	
->>>>>>> 16782adfcac753306202049769d5a7aea99c30f0
+$.post( "main2.php", {data: names} )
+.done(function() { 
+	document.location.href = 'main2.php';
+}
 }
