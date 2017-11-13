@@ -18,8 +18,7 @@ $( "form" ).on( "submit", function( event ) {
 	
 	 var names = JSON.parse(jsonArray);
 	 var i=0;
-	 while(names){	 
-		 
+	 while(names){
 		 
 		 // <tr onMouseover=this.bgColor='#D9E4E6' onMouseout=this.bgColor='white'>";
 		 // <td> names[i]['Województwo']</td>
@@ -44,13 +43,8 @@ $( "form" ).on( "submit", function( event ) {
 		 // <td> names[i]['Stanowisko Osoby zarządzającej'] </td>
 		// </tr> 
 		 
-		 newRowContent='jesteeeeeeeeeeem';
-
-		 $("#table tbody").append(newRowContent);
-	 
-	 
-	 
-	 
+		 
+	 alert(names[i]['Województwo']);
 	 i++;
 	 }
 	 
@@ -59,22 +53,8 @@ $( "form" ).on( "submit", function( event ) {
 	
     }); 
 	
-	
-	
-	
-	
-	
-	
+
 });
-
-
-
-
-
-
-
-
-
 
 
 
