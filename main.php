@@ -180,8 +180,11 @@
         </thead>
 		<tbody>
 
+	
     </tbody> 
-  </table>        
+  </table>
+
+<button id='next'>Dalej</button>  
 </body>
 </html>
 

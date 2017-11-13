@@ -2,6 +2,7 @@
 
 window.onload = function() {
 submit_form();
+next();
 };
 
 
@@ -30,16 +31,19 @@ $( "form" ).on( "submit", function( event ) {
 		 $("table > tbody").prepend(table_rows);
 		 
 	 i++;
-	 }
-	 
-	 
-	 
-	
+	 }	
     }); 
-	
-
 });
 
+}
 
 
+ function next(){
+	 
+	$('#next').click(function{
+		window.location.href = "main2.php";
+	})
+	
+	
+	
 }
