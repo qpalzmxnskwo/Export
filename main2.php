@@ -21,6 +21,7 @@
 
 <body>
 
+<?php var_dump(_POST['names']) ?>
 <div id="main2">
 	<div class="box2">
 	<button id='csv' class="export-btn"> Wyekspotruj do csv </button><br>
@@ -40,6 +41,18 @@
 
 	</div>
 </div>
+=======
+<button id='csv'> Wyekspotruj do csv </button>
+<button id='xls'> Wyekspotruj do xls </button>
+
+<textarea rows="4" cols="50" id='text'>
+
+
+</textarea>
+
+
+
+>>>>>>> 16782adfcac753306202049769d5a7aea99c30f0
 </body>
 </html>
 

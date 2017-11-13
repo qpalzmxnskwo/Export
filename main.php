@@ -181,9 +181,17 @@
 		<tbody>
 
     </tbody> 
+<<<<<<< HEAD
   </table>    
 
 <input type="button" style="float: right; margin-right: 235px; margin-top: 50px;" value="Następne" onclick="next()"/>  
+=======
+  </table> 
+
+
+
+<button onclick='show()'></button>  
+>>>>>>> 16782adfcac753306202049769d5a7aea99c30f0
 </body>
 </html>
 

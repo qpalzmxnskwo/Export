@@ -1,7 +1,7 @@
 
-
 window.onload = function() {
 submit_form();
+var names;
 };
 
 
@@ -17,7 +17,7 @@ $( "form" ).on( "submit", function( event ) {
 	.done(function(jsonArray ) { 
 	$("tbody tr, td").remove();
 	
-	 var names = JSON.parse(jsonArray);
+	  names = JSON.parse(jsonArray);
 	 var i=0;
 	 while(names){
 		 
@@ -32,16 +32,12 @@ $( "form" ).on( "submit", function( event ) {
 		 
 	 i++;
 	 }
-	 
-	 
-	 
-	
     }); 
-	
-
 });
 
+}
 
+<<<<<<< HEAD
 
 }
 
@@ -51,4 +47,10 @@ $_POST["names"];
 
 
 
+=======
+function show(){
+alert('hehe');	
+alert(names);	
+	
+>>>>>>> 16782adfcac753306202049769d5a7aea99c30f0
 }
