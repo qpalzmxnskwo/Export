@@ -1,29 +1,33 @@
 <?php
-
-header('Content-type: text/csv');
-header('Content-Disposition: attachment; filename="demo.csv"');
- 
-header('Pragma: no-cache');
-header('Expires: 0');
- 
-$file = fopen('php://output', 'w');
- 
-fputcsv($file, array('Column 1', 'Column 2', 'Column 3', 'Column 4', 'Column 5'));
- 
-// $data = array(
-    // array('Data 11', 'Data 12', 'Data 13', 'Data 14', 'Data 15'),   template
-    // array('Data 21', 'Data 22', 'Data 23', 'Data 24', 'Data 25'),
-    // array('Data 31', 'Data 32', 'Data 33', 'Data 34', 'Data 35'),
-    // array('Data 41', 'Data 42', 'Data 43', 'Data 44', 'Data 45'),
-    // array('Data 51', 'Data 52', 'Data 53', 'Data 54', 'Data 55')
-// );
- 
-foreach ($data as $row)
-{
-    fputcsv($file, $row);
-}
- 
-exit();
-
-
+    // $data = array(
+        // array("First Name" => "Natly", "Last Name" => "Jones", "Email" => "natly@gmail.com", "Message" => "Test message by Natly"),
+        // array("First Name" => "Codex", "Last Name" => "World", "Email" => "info@codexworld.com", "Message" => "Test message by CodexWorld"),
+        // array("First Name" => "John", "Last Name" => "Thomas", "Email" => "john@gmail.com", "Message" => "Test message by John"),               
+        // array("First Name" => "Michael", "Last Name" => "Vicktor", "Email" => "michael@gmail.com", "Message" => "Test message by Michael"),
+        // array("First Name" => "Sarah", "Last Name" => "David", "Email" => "sarah@gmail.com", "Message" => "Test message by Sarah")
+    // );
+    
+    function filterData(&$str)
+    {
+        $str = preg_replace("/\t/", "\\t", $str);
+        $str = preg_replace("/\r?\n/", "\\n", $str);
+        if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
+    }
+    
+    $fileName = "data" . date('Ymd') . ".csv";
+    
+    header('Content-type: text/csv');
+    header('Content-Disposition: attachment; filename="demo.csv"');
+    
+    $flag = false;
+    foreach($data as $row) {
+        if(!$flag) {
+            echo implode("\t", array_keys($row)) . "\n";
+            $flag = true;
+        }
+        array_walk($row, 'filterData');
+        echo implode("\t", array_values($row)) . "\n";
+    }
+    
+    exit;
 ?>

@@ -3,6 +3,8 @@ window.onload = function() {
 submit_form();
 next();
 var names;
+to_csv();
+to_xls();
 };
 
 
@@ -46,4 +48,19 @@ $( "form" ).on( "submit", function( event ) {
 	 document.location.href = 'main2.php';
  })
 	 })
+ }
+ 
+ 
+ 
+ function to_csv(){
+	  $('#csv').click(function(){
+	 $.post( "to_csv.php", {data: $('#data').val()} )
+	  })
+ }
+ 
+ 
+ function to_xls(){
+	  $('#xls').click(function(){
+	 $.post( "to_excel.php", {data: $('#data').val()} )
+	  })
  }
