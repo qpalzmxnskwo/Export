@@ -18,6 +18,7 @@
 
 <body>
 
+<input type='hidden' id='data' name='data' value='<?php var_dump($_POST['data']) ?>' /> 
 
 <div id="main2">
 	<div class="box2">
