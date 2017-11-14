@@ -1,6 +1,11 @@
 <?php
-  session_start();
-  $export_data=$_SESSION['array'];
+    // $data = array(
+        // array("First Name" => "Natly", "Last Name" => "Jones", "Email" => "natly@gmail.com", "Message" => "Test message by Natly"),
+        // array("First Name" => "Codex", "Last Name" => "World", "Email" => "info@codexworld.com", "Message" => "Test message by CodexWorld"),
+        // array("First Name" => "John", "Last Name" => "Thomas", "Email" => "john@gmail.com", "Message" => "Test message by John"),               
+        // array("First Name" => "Michael", "Last Name" => "Vicktor", "Email" => "michael@gmail.com", "Message" => "Test message by Michael"),
+        // array("First Name" => "Sarah", "Last Name" => "David", "Email" => "sarah@gmail.com", "Message" => "Test message by Sarah")
+    // );
     
     function filterData(&$str)
     {
@@ -15,7 +20,7 @@
     header('Content-Disposition: attachment; filename="demo.csv"');
     
     $flag = false;
-    foreach($export_data as $row) {
+    foreach($data as $row) {
         if(!$flag) {
             echo implode("\t", array_keys($row)) . "\n";
             $flag = true;
