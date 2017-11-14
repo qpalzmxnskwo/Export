@@ -1,34 +1,35 @@
 <?php
     
-	$data=$_POST['data'];
+	session_start();
+	$export_data=$_SESSION['array'];
 	
 	
-    function filterData(&$str)
-    {
+    $fileName = "export_data" . rand(1,100) . ".xls";
+ 
+if ($export_data) {
+    function filterData(&$str) {
         $str = preg_replace("/\t/", "\\t", $str);
         $str = preg_replace("/\r?\n/", "\\n", $str);
         if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
     }
-    
-    $fileName = "data" . date('Ymd') . ".xls";
-    
+ 
+    // headers for download
     header("Content-Disposition: attachment; filename=\"$fileName\"");
     header("Content-Type: application/vnd.ms-excel");
-    
+ 
     $flag = false;
-	
-	if (is_array($data) || is_object($data)){
-	
-    foreach($data as $row) {
+    foreach($export_data as $row) {
         if(!$flag) {
+            // display column names as first row
             echo implode("\t", array_keys($row)) . "\n";
             $flag = true;
         }
+        // filter data
         array_walk($row, 'filterData');
         echo implode("\t", array_values($row)) . "\n";
-    }}
-    
-    exit;
+    }
+    exit;           
+}
 ?>
   
   

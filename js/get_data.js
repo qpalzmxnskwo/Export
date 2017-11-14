@@ -54,13 +54,13 @@ $( "form" ).on( "submit", function( event ) {
  
  function to_csv(){
 	  $('#csv').click(function(){
-	 $.post( "to_csv.php", {data: $('#data').val()} )
+		document.location.href = 'to_csv.php';
 	  })
  }
  
  
  function to_xls(){
 	  $('#xls').click(function(){
-	 $.post( "to_excel.php", {data: $('#data').val()} )
+		document.location.href = 'to_excel.php';
 	  })
  }
