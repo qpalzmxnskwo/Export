@@ -20,9 +20,11 @@ if ($export_data) {
     $flag = false;
     foreach($export_data as $row) {
         if(!$flag) {
+            // display column names as first row
             echo implode("\t", array_keys($row)) . "\n";
             $flag = true;
         }
+        // filter data
         array_walk($row, 'filterData');
         echo implode("\t", array_values($row)) . "\n";
     }
