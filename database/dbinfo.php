@@ -25,31 +25,29 @@
                 $db_sheet1_comname = 'Nazwa firmy';
                 $db_sheet1_form = 'Forma prawna';
                 $db_sheet1_street = 'Ulica';
-<<<<<<< HEAD
-<<<<<<< HEAD
-				$db_sheet1_code = 'Kod_pocztowy';
-                $db_sheet1_tel = 'Telefon_stacjonarny';
-                $db_sheet1_tel2 = 'Telefon_kom';
-=======
-				$db_sheet1_code = 'Kod pocztowy';
+
+		$db_sheet1_code = 'Kod pocztowy';
                 $db_sheet1_tel = 'Telefon stacjonarny';
                 $db_sheet1_tel2 = 'Telefon kom';
->>>>>>> parent of f14f461... .
-=======
-				$db_sheet1_code = 'Kod pocztowy';
+
+		$db_sheet1_code = 'Kod pocztowy';
                 $db_sheet1_tel = 'Telefon stacjonarny';
                 $db_sheet1_tel2 = 'Telefon kom';
->>>>>>> parent of f14f461... .
+
+		$db_sheet1_code = 'Kod pocztowy';
+                $db_sheet1_tel = 'Telefon stacjonarny';
+                $db_sheet1_tel2 = 'Telefon kom';
+
                 $db_sheet1_fax = 'Fax';
                 $db_sheet1_email = 'Email';
                 $db_users_lname = 'Zatrudnienie';
                 $db_sheet1_nip = 'NIP';
                 $db_sheet1_regon = 'REGON';
-				$db_sheet1_pkd = 'PKD';
-                $db_sheet1_start = 'Rozpoczęcie_działalności';
-                $db_sheet1_fname = 'Imię Osoby zarządzającej';
-                $db_sheet1_lname = 'Nazwisko Osoby zarządzającej';
-                $db_sheet1_position = 'Stanowisko Osoby zarządzającej';
+		$db_sheet1_pkd = 'PKD';
+                $db_sheet1_start = 'Rozpoczęcie działalności';
+                $db_sheet1_fname = 'Imię osoby zarządzającej';
+                $db_sheet1_lname = 'Nazwisko osoby zarządzającej';
+                $db_sheet1_position = 'Stanowisko osoby zarządzającej';
                 
 
 		
