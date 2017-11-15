@@ -2,7 +2,7 @@
 window.onload = function() {
 submit_form();
 next();
-var names;
+var array;
 to_csv();
 to_xls();
 };
@@ -20,7 +20,8 @@ $( "form" ).on( "submit", function( event ) {
 	.done(function(jsonArray ) { 
 	$("tbody tr, td").remove();
 	
-	  names = JSON.parse(jsonArray);
+	 array=jsonArray;
+	 var names = JSON.parse(jsonArray);
 	 var i=0;
 	 while(names){
 		 
@@ -43,7 +44,7 @@ $( "form" ).on( "submit", function( event ) {
 
  function next(){
 	 $('#next').click(function(){
- $.redirect( "main2.php", {data: names} )
+ $.redirect( "main2.php", {data: array} )
  .done(function() { 
 	 document.location.href = 'main2.php';
  })

@@ -2,34 +2,33 @@
     
     session_start();
     $export_data=$_SESSION['array'];
-    
+    $export_data = json_decode(json_encode($export_data), true);
     
     $fileName = "export_data" . rand(1,100) . ".csv";
  
-if ($export_data) {
-    function filterData(&$str) {
-        $str = preg_replace("/\t/", "\\t", $str);
-        $str = preg_replace("/\r?\n/", "\\n", $str);
-        if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
-    }
- 
-    // headers for download
-    header("Content-Disposition: attachment; filename=\"$fileName\"");
-    header("Content-Type: application/vnd.ms-excel");
- 
-    $flag = false;
-    foreach($export_data as $row) {
-        if(!$flag) {
-            // display column names as first row
-            echo implode("\t", array_keys($row)) . "\n";
-            $flag = true;
+ function outputCsv($fileName, $assocDataArray)
+{
+    ob_clean();
+    header('Pragma: public');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+    header('Cache-Control: private', false);
+    header('Content-Type: text/csv');
+    header('Content-Disposition: attachment;filename=' . $fileName);    
+    if(isset($assocDataArray['0'])){
+        $fp = fopen('php://output', 'w');
+        fputcsv($fp, array_keys($assocDataArray['0']));
+        foreach($assocDataArray AS $values){
+            fputcsv($fp, $values);
         }
-        // filter data
-        array_walk($row, 'filterData');
-        echo implode("\t", array_values($row)) . "\n";
+        fclose($fp);
     }
-    exit;           
+    ob_flush();
 }
+
+
+
+outputCsv($filename, $export_data);
 ?>
   
   

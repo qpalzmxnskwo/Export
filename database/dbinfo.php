@@ -25,7 +25,7 @@
                 $db_sheet1_comname = 'Nazwa_firmy';
                 $db_sheet1_form = 'Forma_prawna';
                 $db_sheet1_street = 'Ulica';
-	        $db_sheet1_code = 'Kod_pocztowy';
+				$db_sheet1_code = 'Kod_pocztowy';
                 $db_sheet1_tel = 'Telefon_stacjonarny';
                 $db_sheet1_tel2 = 'Telefon_kom';
                 $db_sheet1_fax = 'Fax';
@@ -33,7 +33,7 @@
                 $db_users_lname = 'Zatrudnienie';
                 $db_sheet1_nip = 'NIP';
                 $db_sheet1_regon = 'REGON';
-		$db_sheet1_pkd = 'PKD';
+				$db_sheet1_pkd = 'PKD';
                 $db_sheet1_start = 'Rozpoczęcie_działalności';
                 $db_sheet1_fname = 'Imię_osoby_zarządzającej';
                 $db_sheet1_lname = 'Nazwisko_osoby_zarządzającej';

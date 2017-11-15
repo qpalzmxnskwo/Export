@@ -6,7 +6,7 @@
             header('Location: index.php');
             exit();
     }
-	$_SESSION['array']=$_POST['data'];
+	$_SESSION['array']=json_decode($_POST['data']);
 ?>
 
 
