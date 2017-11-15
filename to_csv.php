@@ -6,9 +6,7 @@
         // array("First Name" => "Michael", "Last Name" => "Vicktor", "Email" => "michael@gmail.com", "Message" => "Test message by Michael"),
         // array("First Name" => "Sarah", "Last Name" => "David", "Email" => "sarah@gmail.com", "Message" => "Test message by Sarah")
     // );
-    
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     session_start();
     $export_data=$_SESSION['array'];
     $export_data = json_decode(json_encode($export_data), true);
@@ -38,9 +36,6 @@
 
 
 outputCsv($filename, $export_data);
-=======
-=======
->>>>>>> parent of f14f461... .
     function filterData(&$str)
     {
         $str = preg_replace("/\t/", "\\t", $str);
@@ -64,8 +59,4 @@ outputCsv($filename, $export_data);
     }
     
     exit;
-<<<<<<< HEAD
->>>>>>> parent of f14f461... .
-=======
->>>>>>> parent of f14f461... .
-?>
+
