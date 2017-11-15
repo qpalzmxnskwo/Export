@@ -4,31 +4,26 @@
     $export_data=$_SESSION['array'];
     $export_data = json_decode(json_encode($export_data), true);
     
-    $fileName = "export_data" . rand(1,100) . ".csv";
+    
+    $fileName = "data" . date('Ymd') . ".csv";
  
- function outputCsv($fileName, $assocDataArray)
-{
-    ob_clean();
-    header('Pragma: public');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-    header('Cache-Control: private', false);
-    header('Content-Type: text/csv');
-    header('Content-Disposition: attachment;filename=' . $fileName);    
-    if(isset($assocDataArray['0'])){
-        $fp = fopen('php://output', 'w');
-        fputcsv($fp, array_keys($assocDataArray['0']));
-        foreach($assocDataArray AS $values){
-            fputcsv($fp, $values);
+if ($export_data) {
+ 
+       
+    
+    header('Content-type: text/csv');
+    header('Content-Disposition: attachment; filename="demo.csv"');
+ 
+    $flag = false;
+    foreach($export_data as $row) {
+        if(!$flag) {
+            echo mb_convert_encoding(implode("\t", array_keys($row)) . "\n", 'ISO-8859-2', 'utf-8');
+            $flag = true;
         }
-        fclose($fp);
+        echo mb_convert_encoding(implode("\t", array_values($row)) . "\n", 'ISO-8859-2', 'utf-8');
     }
-    ob_flush();
+    exit;           
 }
-
-
-
-outputCsv($filename, $export_data);
 ?>
   
   

@@ -63,7 +63,7 @@
 
 <div class="input">
         <label for="nazwafirmy">Nazwa firmy</label>
-        <input type="text" value="" name="Nazwa firmy">
+        <input type="text" value="" name="nazwafirmy">
     </div>
 
     <div class="input">
