@@ -1,14 +1,14 @@
 <?php
 
 
-require_once 'PHPMailer.php';
-require_once 'SMTP.php';
-require_once 'Exception.php';
+require_once 'PHPMailer/PHPMailer.php';
+require_once 'PHPMailer/SMTP.php';
+require_once 'PHPMailer/Exception.php';
 
-use PHPMailer\PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-$text=$_POST['text'];
+//$text=$_POST['text'];
 
 $start=0;
 
@@ -18,33 +18,36 @@ send_mail();
 
 function send_mail(){
 
-$mail = new PHPMailer(true);
-	$mail->SMTPDebug = 2;
-	$mail->CharSet = 'UTF-8';                                
-    $mail->isSMTP();
-	$mail->SMTPAutoTLS = false;	 
-    $mail->Host = '';  
-    $mail->SMTPAuth = true;                               
-    $mail->Username = '';                 
-    $mail->Password = '';                                             
-    $mail->Port = 587;  
-	$mail->SetFrom('', '');
-	$mail->Subject = '';
-	$mail->Body = $text;
-	//$mail->AddAttachment($_FILES['file']['tmp_name'], $_FILES['file']['name']); //attachments
-	
-	
-	for ($i=$start; $i<$i+11, $i++){
-	$mail->AddAddress('');
+
+$mail = new PHPMailer();
+$mail->SMTPOptions = array(
+'ssl' => array(
+'verify_peer' => false,
+'verify_peer_name' => false,
+'allow_self_signed' => true
+)
+);
+
+$mail->isSMTP();
+$mail->SMTPDebug = 2;
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 587;
+$mail->SMTPSecure = 'tls';
+$mail->SMTPAuth = true;
+$mail->Username = "ola.stolorz@gmail.com";
+$mail->Password = "Kortina2005";
+$mail->setFrom('ola.stolorz@gmail.com', 'First Last');
+$mail->addAddress('ola.stolorz@gmail.com', 'John Doe');
+$mail->Subject = 'PHPMailer GMail SMTP test';
+$mail->msgHTML('mmmmmmmm');
+$mail->AltBody = 'This is a plain-text message body';
+
+if (!$mail->send()) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+} else {
+    echo "Message sent!";
 }
-
-
- if ($mail->Send(){
-	 ini_set('max_execution_time', 10); // delay 10s
-	 $start+=10;
-	 send_mail();
-     
-}}
+}
 
 
 
