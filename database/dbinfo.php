@@ -26,9 +26,15 @@
                 $db_sheet1_form = 'Forma prawna';
                 $db_sheet1_street = 'Ulica';
 <<<<<<< HEAD
+<<<<<<< HEAD
 				$db_sheet1_code = 'Kod_pocztowy';
                 $db_sheet1_tel = 'Telefon_stacjonarny';
                 $db_sheet1_tel2 = 'Telefon_kom';
+=======
+				$db_sheet1_code = 'Kod pocztowy';
+                $db_sheet1_tel = 'Telefon stacjonarny';
+                $db_sheet1_tel2 = 'Telefon kom';
+>>>>>>> parent of f14f461... .
 =======
 				$db_sheet1_code = 'Kod pocztowy';
                 $db_sheet1_tel = 'Telefon stacjonarny';

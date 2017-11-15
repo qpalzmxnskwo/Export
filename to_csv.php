@@ -8,6 +8,7 @@
     // );
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     session_start();
     $export_data=$_SESSION['array'];
     $export_data = json_decode(json_encode($export_data), true);
@@ -38,6 +39,8 @@
 
 outputCsv($filename, $export_data);
 =======
+=======
+>>>>>>> parent of f14f461... .
     function filterData(&$str)
     {
         $str = preg_replace("/\t/", "\\t", $str);
@@ -61,5 +64,8 @@ outputCsv($filename, $export_data);
     }
     
     exit;
+<<<<<<< HEAD
+>>>>>>> parent of f14f461... .
+=======
 >>>>>>> parent of f14f461... .
 ?>
