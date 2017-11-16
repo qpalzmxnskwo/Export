@@ -6,12 +6,13 @@ var array;
 to_csv();
 to_xls();
 send_message();
+makeFileList();
 };
 
 
 function submit_form(){
 
-$( "form" ).on( "submit", function( event ) {
+$( "#form" ).on( "submit", function( event ) {
   event.preventDefault();
   var data = $( "#form input, select ").filter(function () {
         return !!this.value;
@@ -72,10 +73,46 @@ $( "form" ).on( "submit", function( event ) {
  
  function send_message(){
 	 
-	 	 $('#send_mail').click(function(){
-			 var message = $("#emailform").val();                          ;
-		$.post( "send_mail.php", {message:message} )
+	$('#attachments').submit(function(e){
+    e.preventDefault();
+    var form_data = new FormData(this); 
 
-	 })
+    $.ajax({
+        type: 'post',
+        url: 'send_mail.php',
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(answ){
+        }
+    })
+})
 	  
  }
+ 
+ 
+ 
+ function makeFileList() {
+	 $('#filesToUpload').change(function(){
+		var input = document.getElementById("filesToUpload");
+
+		var ul = document.getElementById("fileList");
+		while (ul.hasChildNodes()) {
+			ul.removeChild(ul.firstChild);
+		}
+		for (var i = 0; i < input.files.length; i++) {
+			var li = document.createElement("li");
+			li.innerHTML = input.files[i].name;
+			ul.appendChild(li);
+		}
+		if(!ul.hasChildNodes()) {
+			var li = document.createElement("li");
+			li.innerHTML = 'No Files Selected';
+			ul.appendChild(li);
+		}
+	})
+	
+ }
+ 
+ 
