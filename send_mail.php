@@ -36,16 +36,16 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
-$mail->Username = "ola.stolorz@gmail.com";
-$mail->Password = "makapaka";
-$mail->setFrom('ola.stolorz@gmail.com');
+$mail->Username = "";
+$mail->Password = "";
+$mail->setFrom('');
 
 
-// $i=0;
-// while ($i <= 1) {
-$mail->addAddress('ola.stolorz@gmail.com');
-	// $i++;
-// }
+ $i=0;
+ while ($i <= 1) {
+$mail->addAddress();
+	 $i++;
+ }
 
 $mail->Subject = 'PHPMailer GMail SMTP test';
 $mail->Body = $text;
