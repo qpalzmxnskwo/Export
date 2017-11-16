@@ -24,7 +24,7 @@
 <form id='form'>
     <div class="input">
         <label for="wojewodztwo">Województwo</label>
-        <select name='Powiat'>
+        <select name='Województwo'>
   <option value=""></option>
   <option value="Dolnośląskie">Dolnośląskie</option>
   <option value="Kujawsko-pomorskie">Kujawsko-pomorskie</option>
