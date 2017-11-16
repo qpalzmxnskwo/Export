@@ -27,17 +27,24 @@
 	<div id="sidebar">
 			<button id='csv' class="export-btn"> Wyekspotruj do csv </button><br>
 	<button id='xls' class="export-btn"> Wyekspotruj do xls </button>
+		
 
-		<?php
-		        //dodawanie załączników
-        echo "<form ensctype=\"multipart/form-data\" action=\"attach.php\" method=\"post\">";
-        echo "<p class='export-btn'>Załącz plik: <br><input type=\"file\" size=\"32\" name=\"attachment\" value=\"\"/></p>";
-        echo "</form>";/// koniec float 43%?>
+	<form enctype="multipart/form-data" method="post" id='attachments'>
+
+    <div>Dodaj załączniki:</div>
+	<input type="file" name="filesToUpload[]" id="filesToUpload" multiple="" />
+
+	<div>Wybrane pliki:</div>
+
+<ul id="fileList"></ul>
+
+		
+		
 		<button class='export-btn' type='submit' id='send_mail'>Wyślij</button></center>
 	</div>
 
-			<textarea id="emailform" name="subject"></textarea>
-
+		<textarea id="emailform" name="subject"></textarea>
+</form>
 </div>
 
 
