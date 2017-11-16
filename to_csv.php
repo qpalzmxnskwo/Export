@@ -7,23 +7,27 @@
     
     $fileName = "data" . date('Ymd') . ".csv";
  
-if ($export_data) {
- 
-       
+	function outputCsv($fileName, $assocDataArray)
+	{
+    ob_clean();
+    header('Pragma: public');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+    header('Cache-Control: private', false);
+    header('Content-Type: text/csv');
+    header('Content-Disposition: attachment;filename=' . $fileName);    
     
-    header('Content-type: text/csv');
-    header('Content-Disposition: attachment; filename="demo.csv"');
- 
-    $flag = false;
-    foreach($export_data as $row) {
-        if(!$flag) {
-            echo mb_convert_encoding(implode("\t", array_keys($row)) . "\n", 'ISO-8859-2', 'utf-8');
-            $flag = true;
+	if(isset($assocDataArray['0'])){
+        $fp = fopen('php://output', 'w');
+        fputcsv($fp, array_keys($assocDataArray['0']));
+        foreach($assocDataArray AS $values){
+            fputcsv($fp, $values);
         }
-        echo mb_convert_encoding(implode("\t", array_values($row)) . "\n", 'ISO-8859-2', 'utf-8');
-    }
-    exit;           
-}
+		fclose($fp);
+	}
+	ob_flush();
+	}
+	outputCsv($filename, $export_data);
 ?>
   
   

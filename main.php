@@ -6,6 +6,9 @@
             header('Location: index.php');
             exit();
     }
+	if (isset($_SESSION['array'])){	
+		$_SESSION['array']='';
+	}
 ?>
 
 
