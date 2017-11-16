@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 
 require_once 'PHPMailer/PHPMailer.php';
 require_once 'PHPMailer/SMTP.php';
@@ -15,11 +15,17 @@ $text=$_POST['subject'];
 $name= $_FILES['filesToUpload']['tmp_name'];
 $sname= $_FILES['filesToUpload']['name'];
 
-send_mail($text, $name, $sname);
+$export_data=$_SESSION['array'];
+$export_data = json_decode(json_encode($export_data), true);
+    
 
 
 
-function send_mail($text, $tmpname, $name){
+send_mail($text, $tmp_name, $name, $export_data);
+
+
+
+function send_mail($text, $tmp_name, $name, $export_data){
 
 $mail = new PHPMailer();
 $mail->SMTPOptions = array(
@@ -49,8 +55,8 @@ $mail->addAddress();
 
 $mail->Subject = 'PHPMailer GMail SMTP test';
 $mail->Body = $text;
-foreach (array_keys($tmpname) as $key){
-$mail->AddAttachment($tmpname[$key],$name[$key]);
+foreach (array_keys($tmp_name) as $key){
+$mail->AddAttachment($tmp_name[$key],$name[$key]);
 }
 
 if (!$mail->send()) {
