@@ -5,6 +5,7 @@ next();
 var array;
 to_csv();
 to_xls();
+send_message();
 };
 
 
@@ -64,4 +65,17 @@ $( "form" ).on( "submit", function( event ) {
 	  $('#xls').click(function(){
 		document.location.href = 'to_excel.php';
 	  })
+ }
+ 
+ 
+ 
+ 
+ function send_message(){
+	 
+	 	 $('#send_mail').click(function(){
+			 var message = $("#emailform").val();                          ;
+		$.post( "send_mail.php", {message:message} )
+
+	 })
+	  
  }

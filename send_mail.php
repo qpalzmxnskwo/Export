@@ -9,15 +9,15 @@ require_once 'PHPMailer/Exception.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-//$text=$_POST['text'];
+$text= '<pre>'.$_POST['message'].'</pre></br>';
 
 $start=0;
 
-send_mail();
+send_mail($text);
 
 
 
-function send_mail(){
+function send_mail($text){
 
 
 $mail = new PHPMailer();
@@ -36,11 +36,11 @@ $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 $mail->Username = "ola.stolorz@gmail.com";
-$mail->Password = "Kortina2005";
+$mail->Password = "makapaka";
 $mail->setFrom('ola.stolorz@gmail.com', 'First Last');
 $mail->addAddress('ola.stolorz@gmail.com', 'John Doe');
 $mail->Subject = 'PHPMailer GMail SMTP test';
-$mail->msgHTML('mmmmmmmm');
+$mail->Body = $text;
 $mail->AltBody = 'This is a plain-text message body';
 
 if (!$mail->send()) {

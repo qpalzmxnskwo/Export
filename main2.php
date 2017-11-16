@@ -8,6 +8,7 @@
     }
 	if (empty($_SESSION['array'])){
 	$_SESSION['array']=json_decode($_POST['data']);}
+
 ?>
 
 
@@ -31,7 +32,7 @@
         echo "<form ensctype=\"multipart/form-data\" action=\"attach.php\" method=\"post\">";
         echo "<p class='export-btn'>Załącz plik: <br><input type=\"file\" size=\"32\" name=\"attachment\" value=\"\"/></p>";
         echo "</form>";/// koniec float 43%?>
-		<button class='export-btn' type='submit'  onclick='send_mail()'>Wyślij</button></center>
+		<button class='export-btn' type='submit' id='send_mail'>Wyślij</button></center>
 	</div>
 
 			<textarea id="emailform" name="subject"></textarea>
