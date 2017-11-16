@@ -12,14 +12,14 @@ use PHPMailer\PHPMailer\Exception;
 
 $text=$_POST['subject'];
 
-$name= $_FILES['filesToUpload']['tmp_name'];
-$sname= $_FILES['filesToUpload']['name'];
+$tmp_name= $_FILES['filesToUpload']['tmp_name'];
+$name= $_FILES['filesToUpload']['name'];
 
-send_mail($text, $name, $sname);
+send_mail($text, $tmp_name, $name);
 
 
 
-function send_mail($text, $tmpname, $name){
+function send_mail($text, $tmp_name, $name){
 
 $mail = new PHPMailer();
 $mail->SMTPOptions = array(
@@ -49,8 +49,8 @@ $mail->addAddress();
 
 $mail->Subject = 'PHPMailer GMail SMTP test';
 $mail->Body = $text;
-foreach (array_keys($tmpname) as $key){
-$mail->AddAttachment($tmpname[$key],$name[$key]);
+foreach (array_keys($tmp_name) as $key){
+$mail->AddAttachment($tmp_name[$key],$name[$key]);
 }
 
 if (!$mail->send()) {
