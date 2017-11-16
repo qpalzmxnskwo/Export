@@ -20,6 +20,7 @@ send_mail($text);
 function send_mail($text){
 
 
+$mailaddress = array("mailtestowy74@gmail.com", "mailtestowy74@interia.pl");
 $mail = new PHPMailer();
 $mail->SMTPOptions = array(
 'ssl' => array(
@@ -35,13 +36,20 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
-$mail->Username = "ola.stolorz@gmail.com";
-$mail->Password = "makapaka";
-$mail->setFrom('ola.stolorz@gmail.com', 'First Last');
-$mail->addAddress('ola.stolorz@gmail.com', 'John Doe');
+$mail->Username = "mailtestowy74@gmail.com";
+$mail->Password = "haslo123";
+$mail->setFrom('mailtestowy74@gmail.com');
+
+//maile
+$i=0;
+while ($i <= 1) {
+	$mail->addAddress($mailaddress[$i]);
+	$i++;
+}
+
 $mail->Subject = 'PHPMailer GMail SMTP test';
 $mail->Body = $text;
-$mail->AltBody = 'This is a plain-text message body';
+
 
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
