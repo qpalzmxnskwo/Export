@@ -8,6 +8,7 @@
     }
 	if (empty($_SESSION['array'])){
 	$_SESSION['array']=json_decode($_POST['data']);}
+	
 
 ?>
 

@@ -14,7 +14,7 @@
     header('Expires: 0');
     header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
     header('Cache-Control: private', false);
-    header('Content-Type: text/csv');
+    header('Content-Type: text/csv; UTF-16');
     header('Content-Disposition: attachment;filename=' . $fileName);    
     
 	if(isset($assocDataArray['0'])){
