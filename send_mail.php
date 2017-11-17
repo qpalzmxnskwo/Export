@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 
 require_once 'PHPMailer/PHPMailer.php';
 require_once 'PHPMailer/SMTP.php';
@@ -15,11 +15,20 @@ $text=$_POST['subject'];
 $tmp_name= $_FILES['filesToUpload']['tmp_name'];
 $name= $_FILES['filesToUpload']['name'];
 
-send_mail($text, $tmp_name, $name);
+$export_data=$_SESSION['array'];
+$export_data = json_decode(json_encode($export_data), true);
+
+
+foreach($export_data as $key=>$val){
+$email_list[]=$val['Email'];
+}
+
+
+send_mail($text, $tmp_name, $name, $email_list);
 
 
 
-function send_mail($text, $tmp_name, $name){
+function send_mail($text, $tmp_name, $name, $email_list){
 
 $mail = new PHPMailer();
 $mail->SMTPOptions = array(
@@ -41,11 +50,13 @@ $mail->Password = "";
 $mail->setFrom('');
 
 
- $i=0;
- while ($i <= 1) {
-$mail->addAddress();
-	 $i++;
- }
+for($i=0; $i<10; $i++){
+	if(isset($email_list[$i])){
+		$mail->addAddress($email_list[$i]);
+		unset($email_list[$i]);
+		$email_list=array_values($email_list);
+}}
+
 
 $mail->Subject = 'PHPMailer GMail SMTP test';
 $mail->Body = $text;
@@ -56,7 +67,11 @@ $mail->AddAttachment($tmp_name[$key],$name[$key]);
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Message sent!";
+    
+	if(!empty($email_list)){
+	send_mail($text, $tmp_name, $name, $email_list);
+	}
+	
 }
 }
 
