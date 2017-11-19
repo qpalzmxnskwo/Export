@@ -7,27 +7,25 @@
     
     $fileName = "data" . date('Ymd') . ".csv";
  
-	function outputCsv($fileName, $assocDataArray)
-	{
-    ob_clean();
-    header('Pragma: public');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-    header('Cache-Control: private', false);
-    header('Content-Type: text/csv; UTF-16');
-    header('Content-Disposition: attachment;filename=' . $fileName);    
-    
-	if(isset($assocDataArray['0'])){
-        $fp = fopen('php://output', 'w');
-        fputcsv($fp, array_keys($assocDataArray['0']));
-        foreach($assocDataArray AS $values){
-            fputcsv($fp, $values);
+ 
+if ($export_data) {
+	
+	header('Content-Type: text/csv ; charset=UTF-16LE');
+    header('Content-Disposition: attachment;filename=' . $fileName);
+ 
+	 echo chr(255) . chr(254);
+ 
+ 
+    $flag = false;
+    foreach($export_data as $row) {
+        if(!$flag) {
+            echo mb_convert_encoding(implode(", ", array_keys($row)) . "\r\n", 'UTF-16LE', 'utf-8');
+            $flag = true;
         }
-		fclose($fp);
-	}
-	ob_flush();
-	}
-	outputCsv($filename, $export_data);
+        echo mb_convert_encoding(implode(", ", array_values($row)) . "\r\n", 'UTF-16LE', 'utf-8');
+    }
+    exit;           
+}
 ?>
   
   
