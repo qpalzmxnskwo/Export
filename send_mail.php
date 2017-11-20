@@ -41,7 +41,6 @@ $mail->Host = 'poczta.interia.pl';
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
-
 $mail->Username = "mailtestowy74@interia.pl";
 $mail->Password = "haslo12";
 $mail->setFrom('mailtestowy74@interia.pl');
@@ -52,15 +51,21 @@ set_time_limit(0);
 
 if ($num == 1) {
 foreach($export_data as $key=>$val){
-
 $email_list[]=$val['Email'];
 }
- $shifted = array_shift($email_list);
+
+}else{
+	$email_list=$export_data;
 }
 
+
+for($i=0; $i<10; $i++){
+	if(isset(array_shift($email_list))){
+$shifted = array_shift($email_list);
 $mail->addAddress($shifted);
-   
-	
+} 
+}
+
 $mail->Subject = 'PHPMailer GMail SMTP test';
 $mail->Body = $text;
 
@@ -74,7 +79,7 @@ if (!$mail->send()) {
     if (!empty($email_list)) {
     	var_dump($email_list);
     	sleep(10);
-    	send_mail($text,$tmp_name, $name, $shifted, 2);
+    	send_mail($text,$tmp_name, $name, $email_list, 2);
     }
 }
 }
