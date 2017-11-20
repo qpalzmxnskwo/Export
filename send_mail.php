@@ -20,11 +20,26 @@ $export_data=$_SESSION['array'];
 $export_data = json_decode(json_encode($export_data), true);
 
 
-$num=1; 
+foreach($export_data as $key=>$val){
+$email_list[]=$val['Email'];
+}
 
-send_mail($text, $tmp_name, $name, $export_data, $num);
 
-function send_mail($text, $tmp_name, $name, $export_data, $num){
+
+function send($email_list, $text, $tmp_name,$name){
+if (!empty($email_list)) {
+	for($i=0); $i<10; $i++){
+	$email = array_shift($email_list);	
+	send_mail($text,$tmp_name, $name, $email);}	
+	sleep(10);
+	send($email_list, $text, $tmp_name,$name);
+}
+else {
+echo 'wsio wysłane';}
+}
+
+
+function send_mail($text, $tmp_name, $name, $email){
 
 $mail = new PHPMailer();
 $mail->SMTPOptions = array(
@@ -44,25 +59,7 @@ $mail->SMTPAuth = true;
 $mail->Username = "";
 $mail->Password = "";
 $mail->setFrom('');
-
-//maile
-
-set_time_limit(0); 
-
-if ($num == 1) {
-foreach($export_data as $key=>$val){
-$email_list[]=$val['Email'];
-}
-
-}else{
-	$email_list=$export_data;
-}
-
-
-for($i=0; $i<10; $i++){
-	if(array_shift($email_list)){
-$shifted = array_shift($email_list);
-$mail->AddCC($shifted);
+$mail->AddCC($email);
 } 
 }
 
@@ -76,10 +73,7 @@ $mail->AddAttachment($tmp_name[$key],$name[$key]);
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    if (!empty($email_list)) {
-    	sleep(10);
-    	send_mail($text,$tmp_name, $name, $email_list, 2);
-    }
+    echo 'ok';
 }
 }
 
