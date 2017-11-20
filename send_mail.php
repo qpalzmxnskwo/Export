@@ -37,13 +37,13 @@ $mail->SMTPOptions = array(
 
 $mail->isSMTP();
 $mail->SMTPDebug = 2;
-$mail->Host = 'poczta.interia.pl';
+$mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
-$mail->Username = "mailtestowy74@interia.pl";
-$mail->Password = "haslo12";
-$mail->setFrom('mailtestowy74@interia.pl');
+$mail->Username = "";
+$mail->Password = "";
+$mail->setFrom('');
 
 //maile
 
@@ -60,9 +60,9 @@ $email_list[]=$val['Email'];
 
 
 for($i=0; $i<10; $i++){
-	if(isset(array_shift($email_list))){
+	if(array_shift($email_list)){
 $shifted = array_shift($email_list);
-$mail->addAddress($shifted);
+$mail->AddCC($shifted);
 } 
 }
 
@@ -77,7 +77,6 @@ if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
     if (!empty($email_list)) {
-    	var_dump($email_list);
     	sleep(10);
     	send_mail($text,$tmp_name, $name, $email_list, 2);
     }
