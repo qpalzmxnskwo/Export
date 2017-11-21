@@ -1,5 +1,5 @@
 <?php
-
+set_time_limit(0);
 
 session_start();
 require_once 'PHPMailer/PHPMailer.php';
@@ -25,19 +25,21 @@ $email_list[]=$val['Email'];
 }
 
 
+$ii=0;
+send_mails($email_list, $text, $tmp_name,$name);
 
-function send($email_list, $text, $tmp_name,$name){
+function send_mails($email_list, $text, $tmp_name,$name){
 if (!empty($email_list)) {
-	for($i=0); $i<10; $i++){
+	for($i=0; $i<5; $i++){
 	$email = array_shift($email_list);	
-	send_mail($text,$tmp_name, $name, $email);}	
+	echo$ii;
+	$ii++;}
+	send_mail($text,$tmp_name, $name, $email);
 	sleep(10);
-	send($email_list, $text, $tmp_name,$name);
-}
+send_mails($email_list, $text, $tmp_name,$name);}
 else {
 echo 'wsio wysłane';}
 }
-
 
 function send_mail($text, $tmp_name, $name, $email){
 
@@ -56,13 +58,10 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
-$mail->Username = "";
-$mail->Password = "";
-$mail->setFrom('');
+$mail->Username = "troleklolek123123@gmail.com";
+$mail->Password = "troleklolek321";
+$mail->setFrom('troleklolek123123@gmail.com');
 $mail->AddCC($email);
-} 
-}
-
 $mail->Subject = 'PHPMailer GMail SMTP test';
 $mail->Body = $text;
 
@@ -73,7 +72,7 @@ $mail->AddAttachment($tmp_name[$key],$name[$key]);
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo 'ok';
+    echo 'wysłano';
 }
 }
 
