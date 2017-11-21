@@ -165,8 +165,8 @@ textarea {
 }
 
 #emailform{
-width: 550px;
-height: 400px;
+width: 50%;
+height: 80%;
 margin-top: 5px;
 }
 
@@ -185,8 +185,10 @@ margin-top: 5px;
 
 #att{
   padding: 10px;
+  font-weight: 900;
 }
 
 #emailformtext{
   padding-top: 15px; 
+  font-weight: 900;
 }
