@@ -91,7 +91,8 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-top: 5%;
+  margin: 0;
+ 
 }
 
 #center{
@@ -144,18 +145,19 @@ input, label {
 }
 
 .box2{
-  margin-left: 20%;
-  margin-right: 20%;
   background-color: #2EACFE;
   height: 500px;
+  display: inline-block;
+  float: left;
+  width: 40%; 
 }
 
 #sidebar{
   background-color: #0B9FFF;
-  width: 30%;
+  width: 20%;
   display: inline-block;
   padding-right: 25px;
-  margin-right: 50px;
+  margin-left: 20%;
   height: 100%;
   float: left;
 }
@@ -165,9 +167,10 @@ textarea {
 }
 
 #emailform{
-width: 50%;
+width: 80%;
 height: 80%;
 margin-top: 5px;
+margin-left: 10%;
 }
 
 
@@ -177,10 +180,10 @@ margin-top: 5px;
 
 #exportbox{
   background-color: #006EB6;
-  margin-left: 20%;
-  margin-right: 20%;
   text-align: center;
   padding: 10px; 
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 #att{
@@ -191,4 +194,5 @@ margin-top: 5px;
 #emailformtext{
   padding-top: 15px; 
   font-weight: 900;
+  margin-left: 10%;
 }

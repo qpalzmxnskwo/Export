@@ -24,7 +24,8 @@
 	<button id='csv' class="export-btn"> Wyekspotruj do csv </button>
 	<button id='xls' class="export-btn"> Wyekspotruj do xls </button>
 </div>
-<div class="box2">
+
+
 	<div id="sidebar">
 			
 		
@@ -44,6 +45,7 @@
 		<button class='export-btn' type='submit' id='send_mail'>Wyślij</button></center>
 	</div>
 </div>
+<div class="box2">
 		<div id="emailformtext">Wpisz treść</div>
 		<textarea id="emailform" name="subject"></textarea>
 </form>
