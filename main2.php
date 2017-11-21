@@ -31,6 +31,7 @@
 
 	<form enctype="multipart/form-data" method="post" id='attachments'>
 
+<div id="att">
     Dodaj załączniki:
 	<input type="file" name="filesToUpload[]" id="filesToUpload" multiple="" />
 
@@ -42,7 +43,8 @@
 		
 		<button class='export-btn' type='submit' id='send_mail'>Wyślij</button></center>
 	</div>
-
+</div>
+		<div id="emailformtext">Wpisz treść</div>
 		<textarea id="emailform" name="subject"></textarea>
 </form>
 </div>
