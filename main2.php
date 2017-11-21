@@ -32,17 +32,17 @@
 
 	<form enctype="multipart/form-data" method="post" id='attachments'>
 
-<div id="att">
-    Dodaj załączniki:
-	<input type="file" name="filesToUpload[]" id="filesToUpload" multiple="" />
-
-	Wybrane pliki:
-
-<ul id="fileList"></ul>
+<form action="#">
+  <div class="input-file-container">  
+    <input class="input-file" id="my-file" type="file">
+    <label tabindex="0" for="my-file" class="input-file-trigger">Dodaj załączniki</label>
+  </div>
+  <p class="file-return"></p>
+</form>
 
 		
-		
-		<button class='export-btn' type='submit' id='send_mail'>Wyślij</button></center>
+		<br>
+		<button class='export-btn' type='submit' id='send_mail' style="width: 100%;">Wyślij</button></center>
 	</div>
 </div>
 <div class="box2">
@@ -55,5 +55,7 @@
 </body>
 </html>
 
+
 <script type="text/javascript" src="js/get_data.js"></script>
+<script type="text/javascript" src="js/attach.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

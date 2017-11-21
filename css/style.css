@@ -136,30 +136,37 @@ input, label {
 }
 
 .export-btn{
-  background-color: white;
-  border-radius: 50px;
-  padding: 5px;
+    background-color: #39D2B4; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 .export-btn:hover{
-  background-color: #ddd ;
+  background-color: #17b092;
 }
 
 .box2{
-  background-color: #2EACFE;
+  background-color: #f2f2f2;
   height: 500px;
   display: inline-block;
   float: left;
   width: 40%; 
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 #sidebar{
-  background-color: #0B9FFF;
+  background-color: #f2f2f2;
   width: 20%;
   display: inline-block;
   margin-left: 20%;
   float: left;
   height: 500px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 textarea {
@@ -179,11 +186,12 @@ margin-left: 10%;
 }
 
 #exportbox{
-  background-color: #006EB6;
+  background-color: #33ccff;
   text-align: center;
   padding: 10px; 
   margin-left: 20%;
   margin-right: 20%;
+
 }
 
 #att{
@@ -195,4 +203,49 @@ margin-left: 10%;
   padding-top: 15px; 
   font-weight: 900;
   margin-left: 10%;
+}
+
+.input-file-container {
+  position: relative;
+  width: 100%;
+} 
+.js .input-file-trigger {
+  display: block;
+  padding: 14px 45px;
+  background: #39D2B4;
+  color: #fff;
+  font-size: 1em;
+  transition: all .4s;
+  cursor: pointer;
+}
+.js .input-file {
+  position: absolute;
+  top: 0; left: 0;
+  width: 225px;
+  opacity: 0;
+  padding: 14px 0;
+  cursor: pointer;
+}
+.js .input-file:hover + .input-file-trigger,
+.js .input-file:focus + .input-file-trigger,
+.js .input-file-trigger:hover,
+.js .input-file-trigger:focus {
+  background: #17b092;
+}
+
+.file-return {
+  margin: 0;
+}
+.file-return:not(:empty) {
+  margin: 1em 0;
+}
+.js .file-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+}
+.js .file-return:not(:empty):before {
+  content: "Selected file: ";
+  font-style: normal;
+  font-weight: normal;
 }
