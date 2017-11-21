@@ -158,8 +158,8 @@ input, label {
   display: inline-block;
   padding-right: 25px;
   margin-left: 20%;
-  height: 100%;
   float: left;
+  height: 500px;
 }
 
 textarea {
