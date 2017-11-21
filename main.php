@@ -16,7 +16,6 @@
 <html lang="pl">
 <head>
 	  <meta charset="UTF-8">
- 
       <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -153,7 +152,7 @@
 </form>
 </div>
 
-
+	<div id="scrolltable">
   <table class="table" id='table'>
         <thead>                          
             <tr>
@@ -183,9 +182,7 @@
 
     </tbody> 
   </table>    
-
-
-  </table> 
+</div>
 <button style="float: right; margin-right: 235px; margin-top: 50px;" id='next'>Dalej</button>  
 
 </body>
