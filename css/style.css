@@ -128,29 +128,32 @@ input, label {
 }
 
 .export-btn{
-  margin: 30px 0 15px 30px;
-  -webkit-border-radius: 15;
-  -moz-border-radius: 15;
-  border-radius: 15px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 15px;
-  background: #3498db;
-  padding: 5px 10px 5px 10px;
-  text-decoration: none;
+   background: #fff;
+    color: #000;
+    font-family: Sans-serif;
+    font-size: 15px;
+    height: 60px;
+    width: 150px;
+    line-height: 60px;
+    margin: 25px 25px;
+    text-align: center;
+    border: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.export-btn:hover{
+  background-color: #539CDB;
 }
 
 .box2{
   margin-left: 20%;
   margin-right: 20%;
-  background-color: lightblue;
+  background-color: #2EACFE;
   height: 500px;
-  margin-top: 50px;
-
 }
 
 #sidebar{
-  background-color: lightgray;
+  background-color: #0B9FFF;
   width: 30%;
   display: inline-block;
   padding-right: 25px;
@@ -169,13 +172,16 @@ height: 400px;
 margin-top: 20px;
 }
 
-#btn-center{
-  text-align: center;
-  padding-top: 150px;
-}
 
 *:focus {
     outline: none;
+}
+
+#exportbox{
+  background-color: #006EB6;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
 }
 
  

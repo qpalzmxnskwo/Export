@@ -22,19 +22,21 @@
 
 <body>
 
-
+<div id="exportbox">
+	<button id='csv' class="export-btn"> Wyekspotruj do csv </button>
+	<button id='xls' class="export-btn"> Wyekspotruj do xls </button>
+</div>
 <div class="box2">
 	<div id="sidebar">
-			<button id='csv' class="export-btn"> Wyekspotruj do csv </button><br>
-	<button id='xls' class="export-btn"> Wyekspotruj do xls </button>
+			
 		
 
 	<form enctype="multipart/form-data" method="post" id='attachments'>
 
-    <div>Dodaj załączniki:</div>
+    Dodaj załączniki:
 	<input type="file" name="filesToUpload[]" id="filesToUpload" multiple="" />
 
-	<div>Wybrane pliki:</div>
+	Wybrane pliki:
 
 <ul id="fileList"></ul>
 
