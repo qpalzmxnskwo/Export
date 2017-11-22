@@ -181,10 +181,9 @@
 		<tbody>
 
     </tbody> 
-  </table>   
-  <button style="float: right; margin-right: 235px;" id='next'>Dalej</button>   
+  </table>    
 </div>
-
+ <button style="float: right; margin-right: 235px;" id='next'>Dalej</button>  
 
 </body>
 </html>

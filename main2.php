@@ -32,12 +32,14 @@
 
 	<form enctype="multipart/form-data" method="post" id='attachments'>
 
-<form action="#">
-  <div class="input-file-container">  
-    <input class="input-file" id="my-file" type="file">
-    <label tabindex="0" for="my-file" class="input-file-trigger">Dodaj załączniki</label>
-  </div>
-  <p class="file-return"></p>
+ 
+    <input class="input-file" id="filesToUpload" multiple=""  type="file">
+    <label tabindex="0" for="filesToUpload" class="input-file-trigger">Dodaj załączniki</label>
+
+  <div>Wybrane pliki:</div>
+
+<ul id="fileList"></ul>
+  
 </form>
 
 		

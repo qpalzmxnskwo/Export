@@ -86,7 +86,6 @@ $( "#form" ).on( "submit", function( event ) {
         contentType: false,
         processData: false,
         success: function(answ){
-        	alert("EEEEEEEEEEEEEEEEEEEEEEEE");
         }
     })
 })
