@@ -19,6 +19,7 @@
 </head>
 
 <body>
+<button class='logout'>wyloguj</button>
 
 <div id="exportbox">
 	<button id='csv' class="export-btn"> Wyekspotruj do csv </button>
@@ -54,6 +55,8 @@
 </div>
 
 
+<div style='clear:both'></div>
+<button class='prev' id='prev'>wstecz</button>
 </body>
 </html>
 

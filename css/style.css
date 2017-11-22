@@ -16,7 +16,7 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
-  font-family: "Roboto", sans-serif;
+  font-family: "arial", sans-serif;
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -28,7 +28,7 @@
 }
 .form button {
   border-radius: 25px;
-  font-family: "Roboto", sans-serif;
+  font-family: "arial", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #33ccff;
@@ -88,15 +88,16 @@
 }
 body {
   background-color: #eee;
-  font-family: "Roboto", sans-serif;
+  font-family: "arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  margin-top: 5%;
+  margin-top: 2%;
  
 }
 
 #center{
+  clear:both;
   margin-left: 25%;
 }
 
@@ -114,7 +115,7 @@ body {
 #scrolltable {
 	margin-top: 20px; 
 	height: 500px; 
-	overflow-y: auto; 
+	overflow-y: scroll; 
 	}
 
 thead{
@@ -132,7 +133,6 @@ input, label {
   margin-right: 50px;
   margin-bottom: 15px;
   font-size: 12px;
-  font-weight: 900;
 }
 
 .export-btn{
@@ -152,22 +152,27 @@ input, label {
 }
 
 .box2{
+  position:relative;
+  margin-bottom:20px;
+  z-index:2;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   background-color: #f2f2f2;
   height: 500px;
   display: inline-block;
   float: left;
   width: 40%; 
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 #sidebar{
+  position:relative;
+  z-index:3;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   background-color: #f2f2f2;
   width: 20%;
   display: inline-block;
   margin-left: 20%;
   float: left;
   height: 500px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 textarea {
@@ -187,22 +192,21 @@ margin-left: 10%;
 }
 
 #exportbox{
+  z-index:3;
+  position:relative;
   background-color: #33ccff;
   text-align: center;
   padding: 10px; 
   margin-left: 20%;
   margin-right: 20%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 
 }
 
-#att{
-  padding: 10px;
-  font-weight: 900;
-}
+
 
 #emailformtext{
   padding-top: 15px; 
-  font-weight: 900;
   margin-left: 10%;
 }
 
@@ -226,4 +230,19 @@ margin-left: 10%;
   opacity: 0;
   padding: 14px 0;
   cursor: pointer;
+}
+.no_repeat{
+float:left;	
+		
+}
+
+
+.logout{
+float:right;
+margin-right:10px;	
+}
+
+.prev{
+	margin:  0 auto;
+	display:block;
 }

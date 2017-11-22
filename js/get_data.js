@@ -7,7 +7,31 @@ to_csv();
 to_xls();
 send_message();
 makeFileList();
+logout();
+prev();
 };
+
+function prev(){
+	$("#prev").click(function(){
+		document.location.href = 'main.php';
+	})
+	
+}
+
+
+
+function logout(){
+$("#logout").click(function(){
+	
+$.post( "logout.php" )
+.done(function() { 
+	 document.location.href = 'index.php';
+ })
+	
+})	
+	
+}
+
 
 
 
@@ -48,9 +72,6 @@ $( "#form" ).on( "submit", function( event ) {
  function next(){
 	 $('#next').click(function(){
  $.redirect( "main2.php", {data: array} )
- .done(function() { 
-	 document.location.href = 'main2.php';
- })
 	 })
  }
  
