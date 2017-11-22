@@ -137,6 +137,7 @@ input, label {
 
 .export-btn{
     background-color: #39D2B4; /* Green */
+	cursor:pointer;
     border: none;
     color: white;
     padding: 15px 32px;

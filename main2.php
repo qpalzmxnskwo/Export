@@ -59,5 +59,4 @@
 
 
 <script type="text/javascript" src="js/get_data.js"></script>
-<script type="text/javascript" src="js/attach.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
