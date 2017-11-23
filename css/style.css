@@ -173,6 +173,7 @@ input, label {
   margin-left: 20%;
   float: left;
   height: 500px;
+  overflow: auto;
 }
 
 textarea {

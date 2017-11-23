@@ -15,7 +15,7 @@
 <html lang="pl">
 <head>
 	  <meta charset="UTF-8">
-      <link rel="stylesheet" href="css/style.css"> 
+      <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
 
   <div>Wybrane pliki:</div>
 
-<ul id="fileList"></ul>
+<ul id="fileList" style="word-wrap: break-word;"></ul>
   
 
 		
