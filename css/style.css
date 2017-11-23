@@ -93,6 +93,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   margin-top: 2%;
+  width: 100%;
  
 }
 
@@ -109,14 +110,12 @@ body {
     color: #024457;
     border-radius: 10px;
     border: 1px solid #33ccff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
 }
 
 
-#scrolltable {
-	margin-top: 20px; 
-	height: 500px; 
-	overflow-y: scroll; 
-	}
 
 thead{
   background-color: #33ccff;
@@ -237,13 +236,21 @@ float:left;
 		
 }
 
-
-.logout{
-float:right;
-margin-right:10px;	
+.nav-btn{
+    float:right;
+    margin-right:10px;
+    background-color: blue;
+    cursor:pointer;
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
 }
 
-.prev{
-	margin:  0 auto;
-	display:block;
+.nav-btn:hover{
+  background-color: darkblue;
 }
+

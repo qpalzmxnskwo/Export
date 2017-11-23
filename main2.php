@@ -19,7 +19,8 @@
 </head>
 
 <body>
-<button class='logout'>wyloguj</button>
+<button class='nav-btn'><a href="login.php">wyloguj</a></button>
+<button class='nav-btn'>wstecz</button>
 
 <div id="exportbox">
 	<button id='csv' class="export-btn"> Wyekspotruj do csv </button>
@@ -55,7 +56,7 @@
 
 
 <div style='clear:both'></div>
-<button class='prev' id='prev'>wstecz</button>
+
 </body>
 </html>
 

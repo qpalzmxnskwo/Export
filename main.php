@@ -20,7 +20,8 @@
 </head>
 
 <body>
-<button class='logout'>wyloguj</button>
+<button class='nav-btn' id='next'>dalej</button>  
+<button class='nav-btn'>wyloguj</button>
 
 <div id="center">
 <form id='form'>
@@ -183,7 +184,6 @@
     </tbody> 
   </table>    
 </div>
-<button style="float: right; margin-right: 235px; margin-top: 50px;" id='next'>Dalej</button>  
 
 </body>
 </html>
