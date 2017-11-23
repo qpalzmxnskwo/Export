@@ -96,6 +96,11 @@ $( "#form" ).on( "submit", function( event ) {
 	 
 	$('#attachments').submit(function(e){
     e.preventDefault();
+	
+	$('#send_mail').text('Wysyłam...');
+	$('#send_mail').prop('disabled', true);
+	
+	
    var form_data = new FormData(this); 
 
     $.ajax({
@@ -106,6 +111,9 @@ $( "#form" ).on( "submit", function( event ) {
         contentType: false,
         processData: false,
         success: function(answ){
+			alert(answ);
+			$('#send_mail').text('Wyślij');
+			$('#send_mail').prop('disabled', false);
         }
     })
 })
