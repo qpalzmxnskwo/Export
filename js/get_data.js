@@ -92,24 +92,11 @@ $( "#form" ).on( "submit", function( event ) {
  
  
  
- 
- function send_message(){
-	 
-	  $('input, textarea', $form).prop('readonly', true);
-        $submit.val('Wysyłam…');
-	 
+  function send_message(){
 	 
 	$('#attachments').submit(function(e){
     e.preventDefault();
-	
-	var $form = $(this);
-	
-	$submit = $('button[type="submit"]', $form);
-	$('textarea', $form).prop('readonly', true);
-	$submit.val('Wysyłam…');
-	
-	
-    var form_data = new FormData(this); 
+   var form_data = new FormData(this); 
 
     $.ajax({
         type: 'post',
@@ -118,11 +105,7 @@ $( "#form" ).on( "submit", function( event ) {
         cache: false,
         contentType: false,
         processData: false,
-        success: function(data){
-			if (data === 'ok') {
-				alert('Wiadomości zostały wysłane.');
-				$submit.val('Wyślij');
-			}
+        success: function(answ){
         }
     })
 })

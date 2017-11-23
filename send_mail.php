@@ -27,19 +27,20 @@ $email_list[]=$val['Email'];
 }
 
 
+
 send_mails($email_list, $text, $tmp_name,$name);
 
 function send_mails($email_list, $text, $tmp_name,$name){
 if (!empty($email_list)) {
 	for($i=0; $i<5; $i++){
 	$email = array_shift($email_list);	
-	}
 	send_mail($text,$tmp_name, $name, $email);
+	}
 	sleep(10);
 send_mails($email_list, $text, $tmp_name,$name);}
 else {
-echo 'wsio wysłane';}
-
+return 'ok';}
+}
 
 function send_mail($text, $tmp_name, $name, $email){
 
@@ -53,7 +54,6 @@ $mail->SMTPOptions = array(
 );
 
 $mail->isSMTP();
-$mail->SMTPDebug = 2;
 $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
@@ -70,9 +70,8 @@ $mail->AddAttachment($tmp_name[$key],$name[$key]);
 }
 
 if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
+   return "nok";
 } 
-
+}
 
 ?>
-

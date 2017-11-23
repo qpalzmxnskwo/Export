@@ -34,14 +34,13 @@
 	<form enctype="multipart/form-data" method="post" id='attachments'>
 
  
-    <input class="input-file" id="filesToUpload" multiple=""  type="file">
+    <input class="input-file" id="filesToUpload" name='filesToUpload[]' multiple=""  type="file">
     <label tabindex="0" for="filesToUpload" class="input-file-trigger">Dodaj załączniki</label>
 
   <div>Wybrane pliki:</div>
 
 <ul id="fileList"></ul>
   
-</form>
 
 		
 		<br>
@@ -60,6 +59,6 @@
 </body>
 </html>
 
-
-<script type="text/javascript" src="js/get_data.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/get_data.js"></script>
+
