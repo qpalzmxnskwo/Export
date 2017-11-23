@@ -21,7 +21,7 @@
 
 <body>
 <button class='nav-btn' id='next'>dalej</button>  
-<button class='nav-btn'>wyloguj</button>
+<button class='nav-btn' onclick="window.location.href='logout.php'">wyloguj</a></button>
 
 <div id="center">
 <form id='form'>

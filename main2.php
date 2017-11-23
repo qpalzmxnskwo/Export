@@ -19,8 +19,8 @@
 </head>
 
 <body>
-<button class='nav-btn'><a href="login.php">wyloguj</a></button>
-<button class='nav-btn'>wstecz</button>
+<button class='nav-btn' onclick="window.location.href='logout.php'">wyloguj</a></button>
+<button class='nav-btn' onclick="window.location.href='main.php'">wstecz</button>
 
 <div id="exportbox">
 	<button id='csv' class="export-btn"> Wyekspotruj do csv </button>
