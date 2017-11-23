@@ -33,13 +33,14 @@ send_mails($email_list, $text, $tmp_name,$name);
 function send_mails($email_list, $text, $tmp_name,$name){
 if (!empty($email_list)) {
 	for($i=0; $i<5; $i++){
-	$email = array_shift($email_list);	
+		$email = array_shift($email_list);	
+		if(!empty($email)){	
 	send_mail($text,$tmp_name, $name, $email);
-	}
+	}}
 	sleep(10);
 send_mails($email_list, $text, $tmp_name,$name);}
 else {
-return 'ok';}
+ exit('Wiadomości zostały wysłane');}
 }
 
 function send_mail($text, $tmp_name, $name, $email){
@@ -70,7 +71,7 @@ $mail->AddAttachment($tmp_name[$key],$name[$key]);
 }
 
 if (!$mail->send()) {
-   return "nok";
+   echo "Wystapił błąd przy wysyłaniu wiadomości do ".$email;
 } 
 }
 
