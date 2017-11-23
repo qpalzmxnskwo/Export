@@ -21,7 +21,7 @@
 
 <body>
 <button class='nav-btn' id='next'>dalej</button>  
-<button class='nav-btn' onclick="window.location.href='logout.php'">wyloguj</a></button>
+<button class='nav-btn' id='logout'>wyloguj</a></button>
 
 <div id="center">
 <form id='form'>
@@ -153,7 +153,8 @@
 </form>
 </div>
 
-	<div id="scrolltable">
+<div id="table-wrapper">
+  <div id="table-scroll">
   <table class="table" id='table'>
         <thead>                          
             <tr>
@@ -183,7 +184,6 @@
 
     </tbody> 
   </table>    
-</div>
 
 </body>
 </html>

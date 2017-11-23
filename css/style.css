@@ -104,17 +104,34 @@ body {
 
 #table {
     margin: 1em 0;
-    margin-top: 5%;
     width: 100%;
-    background: #FFF;
+    background: #11aadd;
     color: #024457;
     border-radius: 10px;
     border: 1px solid #33ccff;
-    overflow-y: auto;
-    overflow-x: hidden;
     word-wrap: break-word;
+    table-layout:fixed;
+    font-size: 11px;
 }
 
+#table-wrapper {
+  position:relative;
+  margin-top: 50px;
+}
+#table-scroll {
+  height:50vh;
+  overflow:auto;  
+}
+#table-wrapper table {
+  width:100%;
+
+}
+
+
+td{
+  background-color: lightblue;
+  width: 1000px;
+}
 
 
 thead{

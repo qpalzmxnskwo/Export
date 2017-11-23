@@ -71,7 +71,7 @@ $mail->AddAttachment($tmp_name[$key],$name[$key]);
 }
 
 if (!$mail->send()) {
-   echo "Wystapił błąd przy wysyłaniu wiadomości do ".$email;
+   echo "Wystapił błąd przy wysyłaniu wiadomości do ".$email.PHP_EOL;
 } 
 }
 
