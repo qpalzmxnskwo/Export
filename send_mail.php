@@ -56,6 +56,7 @@ $mail->SMTPOptions = array(
 
 $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';
+$mail->CharSet = "UTF-8";
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
