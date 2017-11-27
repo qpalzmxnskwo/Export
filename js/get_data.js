@@ -9,6 +9,7 @@ send_message();
 makeFileList();
 logout();
 prev();
+blockButton();
 };
 
 function prev(){
@@ -93,6 +94,20 @@ $( "#form" ).on( "submit", function( event ) {
  
  
   function send_message(){
+
+  	$(document).ready(function(){
+    $('.send-btn').attr('disabled',true);
+    
+    $('#emailform').keyup(function(){
+        if($(this).val().length !=0){
+            $('.send-btn').attr('disabled', false);
+        }
+        else
+        {
+            $('.send-btn').attr('disabled', true);        
+        }
+    })
+});
 	 
 	$('#attachments').submit(function(e){
     e.preventDefault();
@@ -144,4 +159,19 @@ $( "#form" ).on( "submit", function( event ) {
 	
  }
  
+ function blockButton() {
+ 	$(document).ready(function(){
+    $('.send-btn').attr('disabled',true);
+    
+    $('#emailform').keyup(function(){
+        if($(this).val().length !=0){
+            $('.send-btn').attr('disabled', false);
+        }
+        else
+        {
+            $('.send-btn').attr('disabled', true);        
+        }
+    })
+});
+ }
  
