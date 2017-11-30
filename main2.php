@@ -17,7 +17,7 @@
       <meta charset="UTF-8">
       <link rel="stylesheet" href="css/style.css">
 </head>
-
+ 
 <body>
 <button class='nav-btn' id="logout">wyloguj</a></button>
 <button class='nav-btn' id="prev">wstecz</button>
@@ -43,13 +43,13 @@
         
     </div>
 </div>
-<div class="box2">
+<div class="box2"> 
         <div id="emailformtext">Wpisz treść</div>
         <textarea id="emailform" name="subject"></textarea>
         <button class='send-btn' type='submit' id='send_mail' style="width: 100%;">Wyślij</button></center>
 </form>
 </div>
-
+ 
 
 <div style='clear:both'></div>
 

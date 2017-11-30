@@ -37,7 +37,7 @@ if (!empty($email_list)) {
 		if(!empty($email)){	
 	send_mail($text,$tmp_name, $name, $email);
 	}}
-	sleep(10);
+	sleep(10);//niepotrzebnie opóźnia przy pierwszym loopie
 send_mails($email_list, $text, $tmp_name,$name);}
 else {
  exit('Wiadomości zostały wysłane');}
@@ -65,7 +65,7 @@ $mail->Password = "troleklolek321";
 $mail->setFrom('troleklolek123123@gmail.com');
 $mail->AddCC($email);
 $mail->Subject = 'PHPMailer GMail SMTP test';
-$mail->Body = $text;
+$mail->Body = $text.PHP_EOL.PHP_EOL."Wiadomość dołączana do maila".' http://localhost/export/activation.php?email='.$email;
 
 foreach (array_keys($tmp_name) as $key){
 $mail->AddAttachment($tmp_name[$key],$name[$key]);
