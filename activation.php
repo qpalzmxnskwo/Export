@@ -27,6 +27,7 @@ use PHPMailer\PHPMailer\Exception;
 
 
 $mail = new PHPMailer(true);
+
 try {
    $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';
@@ -36,7 +37,8 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 $mail->Username = "troleklolek123123@gmail.com";
 $mail->Password = "troleklolek321";
-$mail->setFrom('troleklolek123123@gmail.com', $mail);
+$mail->setFrom('troleklolek123123@gmail.com');
+$mail->FromName = $_GET['email'];
 $mail->addAddress('troleklolek123123@gmail.com');
 $mail->Subject = 'TUTAJ WPISZ TYTUŁ';
 $mail->Body = "Adres mailowy: ".$_GET['email']." wszedł w link."; //http://localhost/export/activation.php?email=
