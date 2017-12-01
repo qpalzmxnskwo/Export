@@ -24,6 +24,7 @@ $export_data = json_decode(json_encode($export_data), true);
 
 foreach($export_data as $key=>$val){
 $email_list[]=$val['Email'];
+
 }
 
 
@@ -53,7 +54,7 @@ $mail->SMTPOptions = array(
 'allow_self_signed' => true
 )
 );
-
+$emailencoded = base64_encode($email);
 $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';
 $mail->CharSet = "UTF-8";
@@ -65,7 +66,7 @@ $mail->Password = "troleklolek321";
 $mail->setFrom('troleklolek123123@gmail.com');
 $mail->AddCC($email);
 $mail->Subject = 'PHPMailer GMail SMTP test';
-$mail->Body = $text.PHP_EOL.PHP_EOL."Wiadomość dołączana do maila".' http://localhost/export/activation.php?email='.$email;
+$mail->Body = $text.PHP_EOL.PHP_EOL."Wiadomość dołączona do maila".' http://localhost/export/activation.php?email='.$emailencoded;
 
 foreach (array_keys($tmp_name) as $key){
 $mail->AddAttachment($tmp_name[$key],$name[$key]);
