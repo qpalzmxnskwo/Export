@@ -149,7 +149,7 @@
 
 
 <label><input type="checkbox" name="not_repeat_mail"> bez zduplikowanych maili</label>
-<button type='submit' >Wyszukaj</button>
+<button type='submit' class='nav-btn' >Wyszukaj</button>
 </form>
 </div>
 
