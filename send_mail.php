@@ -45,13 +45,13 @@ else {
 }
 
 function send_mail($text, $tmp_name, $name, $email){
-
 $mail = new PHPMailer();
 $mail->SMTPOptions = array(
 'ssl' => array(
 'verify_peer' => false,
 'verify_peer_name' => false,
 'allow_self_signed' => true
+
 )
 );
 $emailencoded = base64_encode($email);
@@ -61,12 +61,12 @@ $mail->CharSet = "UTF-8";
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
-$mail->Username = "troleklolek123123@gmail.com";
-$mail->Password = "troleklolek321";
-$mail->setFrom('troleklolek123123@gmail.com');
+$mail->Username = "biuro.informatics@gmail.com";//
+$mail->Password = "Test991!";//
+$mail->setFrom('biuro.informatics@gmail.com');//
 $mail->AddCC($email);
-$mail->Subject = 'PHPMailer GMail SMTP test';
-$mail->Body = $text.PHP_EOL.PHP_EOL."Wiadomość dołączona do maila".' http://localhost/export/activation.php?email='.$emailencoded;
+$mail->Subject = 'RODO';//
+$mail->Body = $text.PHP_EOL.PHP_EOL."W tym celu wystarczy odpowiedzieć na przesłane zapytanie lub skorzystać z linku zamieszczonego poniżej, w celu wyrażenia zgody.".' http://localhost/export/activation.php?email='.$emailencoded;//
 
 foreach (array_keys($tmp_name) as $key){
 $mail->AddAttachment($tmp_name[$key],$name[$key]);
@@ -74,7 +74,7 @@ $mail->AddAttachment($tmp_name[$key],$name[$key]);
 
 if (!$mail->send()) {
    echo "Wystapił błąd przy wysyłaniu wiadomości do ".$email.PHP_EOL;
-} 
+}
 }
 
 ?>

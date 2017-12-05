@@ -34,12 +34,12 @@ $mail->CharSet = "UTF-8";
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
-$mail->Username = "troleklolek123123@gmail.com";
-$mail->Password = "troleklolek321";
-$mail->setFrom('troleklolek123123@gmail.com');
+$mail->Username = "biuro.informatics@gmail.com";//
+$mail->Password = "Test991!";//
+$mail->setFrom('biuro.informatics@gmail.com');//
 $mail->FromName = base64_decode($_GET['email']);
-$mail->addAddress('troleklolek123123@gmail.com');
-$mail->Subject = 'TUTAJ WPISZ TYTUŁ';
+$mail->addAddress('biuro.informatics@gmail.com');//
+$mail->Subject = 'TUTAJ WPISZ TYTUŁ';//
 $mail->Body = "Adres mailowy: ".base64_decode($_GET['email'])." wszedł w link."; //http://localhost/export/activation.php?email=
     $mail->send();
 } catch (Exception $e) {

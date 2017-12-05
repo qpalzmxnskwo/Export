@@ -1,4 +1,4 @@
- <?php
+<?php
 //strona główna
     session_start();
   
@@ -43,7 +43,7 @@
         
     </div>
 </div>
-<div class="box2"> 
+<div class="box2">
         <div id="emailformtext">Wpisz treść</div>
         <textarea id="emailform" name="subject"></textarea>
         <button class='send-btn' type='submit' id='send_mail' style="width: 100%;">Wyślij</button></center>
